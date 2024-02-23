@@ -1,0 +1,18 @@
+.pagination {
+    margin-top: 16px;
+  }
+  
+  .pagination button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-right: 8px;
+  }
+  
+  .pagination button:hover {
+    background-color: #0056b3;
+  }
+  
