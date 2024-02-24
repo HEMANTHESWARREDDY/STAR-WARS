@@ -1,100 +1,102 @@
+/* App.css */
+
 .app {
-  text-align: center;
-  padding: 20px;
+    text-align: center;
+    padding: 20px;
 }
 
 .app h1 {
-  font-size: 3.7rem; 
-  color: #ffcc00;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  transition: text-shadow 0.3s ease;
+    font-size: 3.7rem; 
+    color: #ffcc00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: text-shadow 0.3s ease;
 }
 
 .app h1:hover {
-  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.7);
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.7);
 }
 
 .planets-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .planet-detail {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-top: 20px;
-  max-width: 400px;
-  margin: 20px auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .planet-detail:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
 }
 
 .planet-detail h2 {
-  margin-top: 0;
-  margin-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .planet-detail p {
-  margin: 5px 0;
+    margin: 5px 0;
 }
 
 .planet-detail ul {
-  list-style-type: none;
-  padding-left: 0;
+    list-style-type: none;
+    padding-left: 0;
 }
 
 .planet-detail ul li {
-  display: inline;
+    display: inline;
 }
 
 .planet-detail ul li:not(:last-child):after {
-  content: ', ';
+    content: ', ';
 }
 
 .search-bar {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .search-bar input {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
 }
 
 .pagination {
-  margin-top: 16px;
-  display: flex;
-  justify-content: center;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
 }
 
 .pagination button {
-  background-color: #007bff;
-  color: #ea0909;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  cursor: pointer;
-  margin-right: 8px;
-  transition: box-shadow 0.3s ease;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: box-shadow 0.3s ease;
 }
 
 .pagination button:hover {
-  background-color: #0056b3;
-  box-shadow: 0px 0px 10px rgba(222, 8, 8, 0.5);
+    background-color: #0056b3;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
 }
 
 button {
-  height: 3rem;
-  width: 10rem;
+    height: 3rem;
+    width: 10rem;
 }
