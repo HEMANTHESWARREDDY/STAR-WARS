@@ -1,52 +1,63 @@
 import React, { useState, useEffect } from 'react';
-import { fetchPlanets, fetchResident } from './services/swapiService';
+import { fetchPlanets } from './services/swapiService';
 import PlanetsList from './components/PlanetsList';
 import Pagination from './components/Pagination';
+import SearchBar from './components/SearchBar';
+import PlanetDetail from './components/PlanetDetail';
+import './App.css';
 
-function App() {
+const App = () => {
     const [planets, setPlanets] = useState([]);
-    const [nextPage, setNextPage] = useState(null);
-    const [prevPage, setPrevPage] = useState(null);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [selectedPlanet, setSelectedPlanet] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [currentPage]);
 
-    const fetchData = async (page = 1) => {
+    const fetchData = async () => {
         try {
-            const data = await fetchPlanets(page);
+            const data = await fetchPlanets(currentPage);
             setPlanets(data.results);
-            setNextPage(data.next);
-            setPrevPage(data.previous);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
     };
 
     const handleNextPage = () => {
-        if (nextPage) {
-            fetchData(getPageNumber(nextPage));
-        }
+        setCurrentPage(currentPage + 1);
     };
 
     const handlePrevPage = () => {
-        if (prevPage) {
-            fetchData(getPageNumber(prevPage));
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
         }
     };
 
-    const getPageNumber = (url) => {
-        const pageNumber = url.match(/page=(\d+)/);
-        return pageNumber ? parseInt(pageNumber[1]) : 1;
+    const handleSearchChange = (event) => {
+        setSearchTerm(event.target.value);
     };
+
+    const handlePlanetClick = (planet) => {
+        setSelectedPlanet(planet);
+    };
+
+    const filteredPlanets = planets.filter((planet) =>
+        planet.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
     return (
         <div className="app">
             <h1>Star Wars Planets Directory</h1>
-            <PlanetsList planets={planets} />
-            <Pagination onNextPage={handleNextPage} onPrevPage={handlePrevPage} />
+            <SearchBar value={searchTerm} onChange={handleSearchChange} />
+            <PlanetsList planets={filteredPlanets} onPlanetClick={handlePlanetClick} />
+            <Pagination onNextPage={handleNextPage} onPrevPage={handlePrevPage} currentPage={currentPage} />
+            {selectedPlanet && (
+                <PlanetDetail planet={selectedPlanet} />
+            )}
         </div>
     );
-}
+};
 
 export default App;

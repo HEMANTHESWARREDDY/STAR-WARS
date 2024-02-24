@@ -1,12 +1,14 @@
 import React from 'react';
-import Planet from './Planet';
+import Planet from './PlanetDetail';
 import './PlanetsList.css';
 
-const PlanetsList = ({ planets }) => {
+const PlanetsList = ({ planets, onPlanetClick }) => {
     return (
         <div className="planets-list">
-            {planets.map(planet => (
-                <Planet key={planet.name} planet={planet} />
+            {planets.map((planet) => (
+                <div key={planet.name} onClick={() => onPlanetClick(planet)}>
+                    <Planet planet={planet} />
+                </div>
             ))}
         </div>
     );

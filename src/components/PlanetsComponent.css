@@ -1,0 +1,23 @@
+.planets-component {
+    margin-top: 20px;
+}
+
+.planets-component h2 {
+    margin-bottom: 10px;
+}
+
+.planets-component ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.planets-component li {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+.planets-component li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

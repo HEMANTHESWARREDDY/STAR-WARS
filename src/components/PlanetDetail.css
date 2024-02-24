@@ -1,0 +1,30 @@
+.planet-detail {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .planet-detail h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .planet-detail p {
+    margin: 5px 0;
+  }
+  
+  .planet-detail ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .planet-detail ul li {
+    display: inline; 
+  }
+  
+  .planet-detail ul li:not(:last-child):after {
+    content: ', '; 
+  }
+  
